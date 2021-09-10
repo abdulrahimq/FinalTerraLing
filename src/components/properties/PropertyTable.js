@@ -77,7 +77,7 @@ class PropertyTable extends React.Component {
 
   // TODO change getAllValues and removeItemOnce to util file
   getAllValues(arr, property) {
-    var valuesList = [];
+    let valuesList = [];
     for (let element in arr) {
       if (!valuesList.includes(arr[element][property])) {
         valuesList.push(arr[element][property]);
@@ -96,16 +96,12 @@ class PropertyTable extends React.Component {
   };
 
   compareProperties(prop1, prop2) {
-    if (
-      prop1.id === prop2.id &&
-      prop1.title === prop2.title &&
-      prop1.completed === prop2.completed &&
-      prop1.value === prop2.value &&
-      prop1.surness === prop2.surness
-    ) {
-      return true;
-    }
-    return false;
+    return prop1.id === prop2.id &&
+        prop1.title === prop2.title &&
+        prop1.completed === prop2.completed &&
+        prop1.value === prop2.value &&
+        prop1.surness === prop2.surness;
+
   }
 
   findChangedPropertiesIDs(a, b) {
@@ -179,7 +175,7 @@ class PropertyTable extends React.Component {
   render() {
     return (
       <div>
-        <div className="property-table" value="test">
+        <div className="property-table">
           <div className="table-first-header">
             <h1
               onClick={() => {
@@ -195,7 +191,7 @@ class PropertyTable extends React.Component {
             <Button
               className="save-all"
               variant="contained"
-              disabled={this.state.disabled ? false : true}
+              disabled={!this.state.disabled}
               color="secondary"
               style={{ backgroundColor: "#5cb85c", borderColor: "#4cae4c" }}
               onClick={() => this.saveAll()}

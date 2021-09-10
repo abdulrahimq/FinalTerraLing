@@ -14,10 +14,6 @@ class CustomModal extends Component {
     console.log("CHANGE");
     //    this.setState({ value: event.target.value });
   }
-  
-  UNSAFE_componentWillMount() {
-    Modal.setAppElement("body");
-  }
 
   render() {
     return (

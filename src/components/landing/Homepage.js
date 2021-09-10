@@ -14,15 +14,13 @@ class Homepage extends React.Component {
     this.setStateA = this.setStateA.bind(this);
     this.state = {
       desc: "No property has been selected yet",
-      examples: ["No property has been selected for editing exampels yet."],
+      examples: ["No property has been selected for editing examples yet."],
       id: -1,
       exampleID: 0
     };
   }
 
   setStateA(descNew, examplesNew, examplesID) {
-    //console.log("HOMEPAGE SetSTATEA");
-    //console.log("DESC, Example: ", descNew, examplesNew);
     this.setState({ desc: descNew, examples: examplesNew, id: examplesID });
   }
 
